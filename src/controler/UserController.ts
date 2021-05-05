@@ -1,7 +1,6 @@
 import {Request, Response} from 'express';
 import {CreateUserService} from '../services/CreateUserService';
 
-
 class UserController {
     async create (request: Request, response: Response){
         const userData = request.body

@@ -2,7 +2,6 @@ import {Column, CreateDateColumn, Entity, PrimaryColumn, ManyToOne} from 'typeor
 import { v4 as uuid} from 'uuid';
 import { CourseUnit } from './CourseUnit';
 
-
 @Entity('activies')
 class Activy{
     
