@@ -1,6 +1,7 @@
 import {getRepository} from 'typeorm'
 import {Activy} from '../models/Activy'
 
+
 interface ActivyData{
     name:string
     course_unit_id:string

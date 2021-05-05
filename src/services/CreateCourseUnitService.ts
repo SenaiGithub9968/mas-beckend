@@ -1,6 +1,7 @@
 import {getRepository} from 'typeorm'
 import {CourseUnit} from '../models/CourseUnit'
 
+
 interface CourseUnitData{
     name:string
     description: string
@@ -8,15 +9,12 @@ interface CourseUnitData{
 
 class CreateCourseUnitService{
     public async execute({name,description}:CourseUnitData){
-    public async execute({name,description}:CourseUnitData): Promise<CourseUnit>{
     
         const courseUnitRepository = getRepository(CourseUnit)
     
-        const courseUnit = {
         const courseUnit = courseUnitRepository.create({
                 name,
                 description
-        }
         });
 
         await courseUnitRepository.save(courseUnit);

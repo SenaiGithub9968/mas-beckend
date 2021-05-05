@@ -2,6 +2,7 @@ import {Router, Request, Response, response} from 'express';
 import {UserController} from './controler/UserController';
 import { CourseUnit } from './models/CourseUnit';
 
+
 interface UserRequest {
     name: string;
     email: string;
