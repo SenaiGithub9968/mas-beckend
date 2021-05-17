@@ -13,7 +13,7 @@ export default function autenticated(request:Request, response:Response, next:Ne
 
     if(!headerAutorization){
         return {
-            error: 'jwt token not found'
+            error: 'JWT token not found'
         }
     }
 
@@ -21,16 +21,16 @@ export default function autenticated(request:Request, response:Response, next:Ne
 
     const verifyToken = verify(token, authConfig.jwt.secret);
 
-    if(!verifyToken){
-        throw new Error()
-    }
+        if(!verifyToken){
+            throw new Error()
+        }
 
-    const {sub,role} = verifyToken as Token;
+    const {sub,role} = verifyToken as Token
 
-    request.body = {
-        id: sub,
-        role: role
-    }
+        request.body.user = {
+            id: sub,
+            role: role
+        }
 
     return next();
 }
