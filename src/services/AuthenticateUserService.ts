@@ -10,7 +10,7 @@ interface AuthData {
 }
 
 class AuthenticateUserService {
-    public async execute({email, password}:AuthData): Promise<string | {}>{
+    public async execute({email, password}:AuthData): Promise<String | {}>{
 
         const usersRepository = getRepository(User)
 
